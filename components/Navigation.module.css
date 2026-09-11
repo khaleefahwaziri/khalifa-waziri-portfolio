@@ -1,0 +1,92 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 247, 244, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.navigation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100% - 48px, var(--page-width));
+  min-height: 72px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: var(--foreground);
+  font-size: 0.95rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.desktopLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.desktopLinks a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.desktopLinks a:hover {
+  color: var(--foreground);
+}
+
+.menuButton {
+  display: none;
+  padding: 0;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 0.9rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .navigation {
+    width: min(100% - 32px, var(--page-width));
+    min-height: 64px;
+  }
+
+  .desktopLinks {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .mobileMenu {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 1.5rem;
+    background: var(--background);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobileMenu a {
+    padding: 0.75rem 0;
+    color: var(--foreground);
+    font-size: 1.15rem;
+  }
+}
