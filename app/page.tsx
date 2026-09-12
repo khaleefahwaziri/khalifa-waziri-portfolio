@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import SelectedWork from "@/components/SelectedWork";
 
 export default function Home() {
   return (
@@ -9,12 +10,7 @@ export default function Home() {
       <main>
         <Hero />
 
-        <section className="section" id="work">
-          <div className="pageContainer">
-            <p className="sectionLabel">01 / Selected Work</p>
-            <h2 className="placeholderTitle">Projects will live here.</h2>
-          </div>
-        </section>
+        <SelectedWork />
 
         <section className="section" id="about">
           <div className="pageContainer">
