@@ -1,0 +1,140 @@
+.hero {
+  padding: 7.5rem 0 6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4rem;
+  align-items: end;
+}
+
+.intro {
+  max-width: 900px;
+}
+
+.eyebrow {
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 850px;
+  font-size: clamp(3.75rem, 9vw, 8.25rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+}
+
+.title span {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+.description {
+  max-width: 650px;
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.7vw, 1.2rem);
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 1.25rem;
+  color: var(--background);
+  font-size: 0.92rem;
+  font-weight: 600;
+  background: var(--foreground);
+  border-radius: 999px;
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.textLink {
+  color: var(--foreground);
+  font-size: 0.92rem;
+  border-bottom: 1px solid transparent;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.textLink:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.sideNote {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-bottom: 0.3rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 6rem 0 5rem;
+  }
+
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .sideNote {
+    text-align: left;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 4.5rem 0 4rem;
+  }
+
+  .title {
+    font-size: clamp(3rem, 16vw, 5.2rem);
+    line-height: 0.94;
+  }
+
+  .description {
+    margin-top: 1.5rem;
+  }
+
+  .actions {
+    gap: 1rem 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .primaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

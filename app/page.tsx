@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
@@ -6,16 +7,7 @@ export default function Home() {
       <Navigation />
 
       <main>
-        <section className="section">
-          <div className="pageContainer">
-            <p className="sectionLabel">Introduction</p>
-
-            <h1 className="placeholderTitle">
-              Khalifa Waziri — Computer Science graduate working across software,
-              AI and iOS.
-            </h1>
-          </div>
-        </section>
+        <Hero />
 
         <section className="section" id="work">
           <div className="pageContainer">
