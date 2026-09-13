@@ -183,20 +183,50 @@ export default function SelectedWork() {
           </div>
 
           <div className={`${styles.visual} ${styles.browserVisual}`}>
-            <div className={styles.browserBar}>
-              <div className={styles.browserDots}>
-                <span />
-                <span />
-                <span />
-              </div>
+  <div className={styles.browserBar}>
+    <div className={styles.browserDots}>
+      <span />
+      <span />
+      <span />
+    </div>
 
-              <span className={styles.browserLabel}>Ride-Sharing Platform</span>
-            </div>
+    <span className={styles.browserLabel}>Ride-Sharing Platform</span>
+  </div>
 
-            <div className={styles.browserContent}>
-              <span>Real application screenshot coming next</span>
+  <div className={styles.browserShowcase}>
+    <div className={`${styles.browserScreen} ${styles.browserScreenMain}`}>
+      <Image
+        src="/images/ride-sharing/ride-dashboard.png"
+        alt="Ride-Sharing driver dashboard"
+        fill
+        sizes="(max-width: 700px) 90vw, 640px"
+        className={styles.browserScreenshot}
+      />
+    </div>
+
+    <div className={styles.browserSecondaryRow}>
+      <div className={styles.browserScreen}>
+        <Image
+          src="/images/ride-sharing/ride-post.png"
+          alt="Ride-Sharing ride posting screen"
+          fill
+          sizes="(max-width: 700px) 44vw, 300px"
+          className={styles.browserScreenshot}
+        />
+      </div>
+
+      <div className={styles.browserScreen}>
+           <Image
+               src="/images/ride-sharing/ride-listings.png"
+               alt="Ride-Sharing ride listings screen"
+               fill
+               sizes="(max-width: 700px) 44vw, 300px"
+               className={styles.browserScreenshot}
+                />
             </div>
-          </div>
+         </div>
+       </div>
+      </div>
         </article>
       </div>
     </section>

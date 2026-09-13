@@ -213,6 +213,7 @@
 .browserVisual {
   display: flex;
   flex-direction: column;
+  min-height: 560px;
   background: #e9e9e4;
 }
 
@@ -243,15 +244,43 @@
   font-size: 0.72rem;
 }
 
-.browserContent {
+.browserShowcase {
   display: flex;
   flex: 1;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-  text-align: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.browserScreen {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 14px 36px rgba(23, 23, 21, 0.08);
+}
+
+.browserScreenMain {
+  min-height: 290px;
+}
+
+.browserSecondaryRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.browserSecondaryRow .browserScreen {
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.browserScreenshot {
+  object-fit: contain;
+  object-position: top center;
+  background: #ffffff;
 }
 
 /* Tablet */
@@ -323,6 +352,34 @@
     min-height: 120px;
     padding: 1rem;
   }
+
+    /* Ride Sharing mobile */
+
+  .browserVisual {
+    min-height: auto;
+  }
+
+  .browserShowcase {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .browserScreenMain {
+    min-height: 220px;
+  }
+
+  .browserSecondaryRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .browserScreen {
+  min-height: 0;
+}
+
+.browserSecondaryRow .browserScreen {
+  aspect-ratio: 16 / 9;
+}
 
   /* Expense Flow mobile */
 
