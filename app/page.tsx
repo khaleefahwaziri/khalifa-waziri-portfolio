@@ -1,37 +1,25 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import SelectedWork from "@/components/SelectedWork";
+import About from "@/components/About";
+import Currently from "@/components/Currently";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
     <>
       <Navigation />
 
-      <main>
+      <main id="top">
         <Hero />
 
         <SelectedWork />
 
-        <section className="section" id="about">
-          <div className="pageContainer">
-            <p className="sectionLabel">02 / About</p>
-            <h2 className="placeholderTitle">About section.</h2>
-          </div>
-        </section>
+        <About />
 
-        <section className="section" id="currently">
-          <div className="pageContainer">
-            <p className="sectionLabel">03 / Currently</p>
-            <h2 className="placeholderTitle">Currently section.</h2>
-          </div>
-        </section>
+        <Currently />
 
-        <section className="section" id="contact">
-          <div className="pageContainer">
-            <p className="sectionLabel">04 / Contact</p>
-            <h2 className="placeholderTitle">Contact section.</h2>
-          </div>
-        </section>
+        <Contact />
       </main>
     </>
   );

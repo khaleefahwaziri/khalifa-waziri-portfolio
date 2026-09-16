@@ -77,6 +77,210 @@ img {
   letter-spacing: -0.045em;
 }
 
+/* About */
+
+.aboutLayout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: 6rem;
+  align-items: start;
+}
+
+.aboutHeading h2 {
+  max-width: 420px;
+  margin-top: 1.25rem;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.aboutContent {
+  max-width: 680px;
+}
+
+.aboutContent > p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.aboutContent > p + p {
+  margin-top: 1.4rem;
+}
+
+.aboutContent .aboutLead {
+  margin-bottom: 2rem;
+  color: var(--foreground);
+  font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+  line-height: 1.45;
+  letter-spacing: -0.025em;
+}
+
+.aboutDetails {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.aboutDetails > div > span {
+  display: block;
+  margin-bottom: 0.9rem;
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.aboutDetails p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.aboutDetails p + p {
+  color: var(--muted);
+}
+
+/* Currently */
+
+.currentlyLayout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: 6rem;
+  align-items: start;
+}
+
+.currentlyLayout h2 {
+  margin-top: 1.25rem;
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.currentlyGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+.currentlyItem {
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.currentlyItem span {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.currentlyItem h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.currentlyItem p {
+  max-width: 520px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Contact */
+
+.contactSection {
+  min-height: auto;
+  padding-bottom: 2rem;
+  background: #1c211f;
+  color: #f4f4ef;
+  border-bottom: 0;
+}
+
+.contactLayout {
+  display: flex;
+  min-height: 620px;
+  flex-direction: column;
+}
+
+.contactSection .sectionLabel {
+  color: #8f9994;
+}
+
+.contactMain {
+  max-width: 900px;
+  margin: auto 0;
+  padding: 5rem 0;
+}
+
+.contactMain h2 {
+  max-width: 850px;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+.contactMain > p {
+  max-width: 600px;
+  margin-top: 2rem;
+  color: #aeb6b2;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.contactEmail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 2.5rem;
+  padding-bottom: 0.35rem;
+  color: #f4f4ef;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  border-bottom: 1px solid #68736d;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.contactEmail:hover {
+  color: #b8c9c1;
+  border-color: #b8c9c1;
+}
+
+.contactFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: #8f9994;
+  font-size: 0.75rem;
+}
+
+.contactLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.contactLinks a {
+  color: #aeb6b2;
+  transition: color 180ms ease;
+}
+
+.contactLinks a:hover {
+  color: #f4f4ef;
+}
+
 @media (max-width: 700px) {
   .pageContainer {
     width: min(100% - 32px, var(--page-width));
@@ -85,4 +289,70 @@ img {
   .section {
     padding: 5rem 0;
   }
+
+  /* About mobile */
+
+.aboutLayout {
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.aboutHeading h2 {
+  font-size: 2.8rem;
+}
+
+.aboutContent .aboutLead {
+  font-size: 1.3rem;
+}
+
+.aboutDetails {
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+/* Currently mobile */
+
+.currentlyLayout {
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.currentlyLayout h2 {
+  font-size: 2.8rem;
+}
+
+/* Contact mobile */
+
+.contactLayout {
+  min-height: 560px;
+}
+
+.contactMain {
+  padding: 4rem 0;
+}
+
+.contactMain h2 {
+  font-size: clamp(3rem, 15vw, 4.5rem);
+}
+
+.contactMain > p {
+  font-size: 0.95rem;
+}
+
+.contactEmail {
+  max-width: 100%;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.contactFooter {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.contactLinks {
+  gap: 1rem;
+}
+
 }
