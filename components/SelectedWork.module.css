@@ -102,6 +102,17 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 4px;
+  transition:
+   transform 280ms ease,
+    box-shadow 280ms ease;
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project:hover .visual {
+    transform: translateY(-8px) scale(1.008);
+    box-shadow: 0 24px 55px rgba(23, 23, 21, 0.14);
+  }
 }
 
 /* Dissertation */
