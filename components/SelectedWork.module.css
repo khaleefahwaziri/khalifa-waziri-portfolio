@@ -110,51 +110,112 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 3rem;
+  min-height: 560px;
+  padding: 2.5rem;
   background: #1c211f;
   color: #f4f4ef;
+}
+
+.researchTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.researchLabel,
+.findingLabel {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: #8f9994;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.researchCode {
+  flex-shrink: 0;
+  color: #8f9994;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .researchPipeline {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.85rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
+  gap: 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .arrow {
-  color: #929a95;
+  color: #68736d;
+}
+
+.researchFinding {
+  max-width: 560px;
+  margin: 3rem 0;
+}
+
+.researchFinding p {
+  font-size: clamp(1.35rem, 2.6vw, 2.15rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
 }
 
 .statGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .statGrid div {
   display: flex;
   flex-direction: column;
-  min-height: 150px;
-  padding: 1.4rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.18);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  min-height: 135px;
+  padding: 1.25rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .statGrid strong {
   margin-bottom: auto;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 500;
-  letter-spacing: -0.05em;
+  line-height: 1;
+  letter-spacing: -0.055em;
 }
 
 .statGrid span {
-  color: #adb4b0;
-  font-size: 0.78rem;
+  max-width: 190px;
+  margin-top: 1rem;
+  color: #aeb6b2;
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.researchFooter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.researchFooter span {
+  padding: 0.4rem 0.65rem;
+  color: #aeb6b2;
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
 }
 
 /* Expense Flow */
@@ -337,21 +398,43 @@
     min-height: 400px;
   }
 
-  /* Dissertation mobile */
+/* Dissertation mobile */
 
-  .researchVisual {
-    padding: 1.5rem;
-  }
+.researchVisual {
+  min-height: auto;
+  padding: 1.5rem;
+}
 
-  .researchPipeline {
-    gap: 0.55rem;
-    font-size: 0.65rem;
-  }
+.researchTop {
+  flex-direction: column;
+  gap: 1.25rem;
+}
 
-  .statGrid div {
-    min-height: 120px;
-    padding: 1rem;
-  }
+.researchPipeline {
+  gap: 0.5rem;
+  font-size: 0.62rem;
+}
+
+.researchFinding {
+  margin: 2.5rem 0;
+}
+
+.researchFinding p {
+  font-size: 1.45rem;
+}
+
+.statGrid div {
+  min-height: 125px;
+  padding: 1rem;
+}
+
+.statGrid strong {
+  font-size: 2rem;
+}
+
+.researchFooter {
+  margin-top: 1.25rem;
+}
 
     /* Ride Sharing mobile */
 

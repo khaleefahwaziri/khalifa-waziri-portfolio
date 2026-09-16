@@ -48,36 +48,62 @@ export default function SelectedWork() {
           </div>
 
           <div className={`${styles.visual} ${styles.researchVisual}`}>
-            <div className={styles.researchPipeline}>
-              <span>Dataset</span>
-              <span className={styles.arrow}>→</span>
-              <span>Models</span>
-              <span className={styles.arrow}>→</span>
-              <span>Explainability</span>
-              <span className={styles.arrow}>→</span>
-              <span>Bias Analysis</span>
+            <div className={styles.researchTop}>
+              <div>
+                <span className={styles.researchLabel}>Research pipeline</span>
+
+                <div className={styles.researchPipeline}>
+                  <span>Bias in Bios</span>
+                  <span className={styles.arrow}>→</span>
+                  <span>ML Models</span>
+                  <span className={styles.arrow}>→</span>
+                  <span>SHAP + LIME</span>
+                  <span className={styles.arrow}>→</span>
+                  <span>Fairness Analysis</span>
+                </div>
+              </div>
+
+              <span className={styles.researchCode}>MSc · 2026</span>
+            </div>
+
+            <div className={styles.researchFinding}>
+              <span className={styles.findingLabel}>Key finding</span>
+
+              <p>
+                Bias can persist through seemingly neutral proxy terms even when explicit
+                gender indicators are removed.
+              </p>
             </div>
 
             <div className={styles.statGrid}>
               <div>
                 <strong>396K</strong>
-                <span>Biographies</span>
+                <span>Biographies analysed</span>
               </div>
 
               <div>
                 <strong>28</strong>
-                <span>Occupations</span>
+                <span>Occupations evaluated</span>
               </div>
 
               <div>
                 <strong>94.4%</strong>
-                <span>Neutral proxy terms</span>
+                <span>Top SHAP features identified as neutral proxy terms</span>
               </div>
 
               <div>
                 <strong>22/28</strong>
-                <span>Potential adverse impact</span>
+                <span>Occupations showing potential adverse impact</span>
               </div>
+            </div>
+
+            <div className={styles.researchFooter}>
+              <span>TF-IDF</span>
+              <span>Logistic Regression</span>
+              <span>BERT</span>
+              <span>SHAP</span>
+              <span>LIME</span>
+              <span>PBVF</span>
             </div>
           </div>
         </article>
