@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./ExpenseFlowShowcase.module.css";
 
 const screens = [
@@ -35,6 +35,31 @@ const screens = [
 export default function ExpenseFlowShowcase() {
   const [currentScreen, setCurrentScreen] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("left");
+  const [showHint, setShowHint] = useState(false);
+
+  const showcaseRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const showcase = showcaseRef.current;
+
+    if (!showcase) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowHint(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.45,
+      }
+    );
+
+    observer.observe(showcase);
+
+    return () => observer.disconnect();
+  }, []);
 
   const previousScreen = () => {
     setDirection("right");
@@ -60,7 +85,10 @@ export default function ExpenseFlowShowcase() {
   };
 
   return (
-    <div className={styles.showcase}>
+    <div
+      ref={showcaseRef}
+      className={`${styles.showcase} ${showHint ? styles.showHint : ""}`}
+    >
       <div className={styles.phone}>
         <div
           key={currentScreen}
@@ -72,8 +100,9 @@ export default function ExpenseFlowShowcase() {
             src={screens[currentScreen].src}
             alt={screens[currentScreen].alt}
             fill
-            sizes="(max-width: 700px) 230px, 300px"
+            sizes="(max-width: 700px) 220px, 270px"
             className={styles.screenshot}
+            priority={currentScreen === 0}
           />
         </div>
       </div>

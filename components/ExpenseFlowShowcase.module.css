@@ -4,8 +4,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2.5rem 2rem 1.75rem;
-  background: #e9ebe6;
+  padding: 2rem 1rem;
+  background: transparent;
 }
 
 .phone {
@@ -16,7 +16,9 @@
   background: #111;
   border: 6px solid #1d1d1b;
   border-radius: 38px;
-  box-shadow: 0 22px 50px rgba(23, 23, 21, 0.18);
+  box-shadow:
+  0 28px 60px rgba(23, 23, 21, 0.14),
+  0 8px 20px rgba(23, 23, 21, 0.08);
 }
 
 .slide {
@@ -30,30 +32,6 @@
 
 .slideFromLeft {
   animation: slideFromLeft 360ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@keyframes slideFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(35%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideFromLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-35%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .screenshot {
@@ -77,7 +55,7 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  background: #f7f7f4;
+  background: transparent;
   color: #171715;
   font: inherit;
   font-size: 1.25rem;
@@ -91,7 +69,7 @@
 
 .arrow:hover {
   transform: scale(1.06);
-  background: #ffffff;
+  background: var(--surface);
 }
 
 .arrow:focus-visible,
@@ -126,11 +104,66 @@
   border: 0;
   border-radius: 50%;
   cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
 }
 
 .activeDot {
   background: #315c4b;
   transform: scale(1.25);
+}
+
+/* One-time hint when the showcase enters the viewport */
+
+.showHint .phone {
+  animation: sliderHint 900ms cubic-bezier(0.22, 1, 0.36, 1) 250ms both;
+}
+
+/* Screenshot transitions */
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(35%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Small movement that hints there are more screenshots */
+
+@keyframes sliderHint {
+  0% {
+    transform: translateX(0);
+  }
+
+  35% {
+    transform: translateX(-18px);
+  }
+
+  60% {
+    transform: translateX(7px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 700px) {
@@ -155,5 +188,13 @@
   .arrow {
     width: 42px;
     height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showHint .phone,
+  .slideFromRight,
+  .slideFromLeft {
+    animation: none;
   }
 }
