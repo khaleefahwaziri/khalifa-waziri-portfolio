@@ -16,37 +16,66 @@ const screens = [
     label: "Add expense",
   },
   {
+    src: "/images/expense-flow/expense-detail.png",
+    alt: "Expense Flow expense detail screen",
+    label: "Expense detail",
+  },
+  {
     src: "/images/expense-flow/expense-breakdown.png",
     alt: "Expense Flow spending breakdown screen",
     label: "Spending breakdown",
+  },
+  {
+    src: "/images/expense-flow/expense-delete.png",
+    alt: "Expense Flow expense deletion confirmation screen",
+    label: "Delete expense",
   },
 ];
 
 export default function ExpenseFlowShowcase() {
   const [currentScreen, setCurrentScreen] = useState(0);
+  const [direction, setDirection] = useState<"left" | "right">("left");
 
   const previousScreen = () => {
+    setDirection("right");
+
     setCurrentScreen((current) =>
       current === 0 ? screens.length - 1 : current - 1
     );
   };
 
   const nextScreen = () => {
+    setDirection("left");
+
     setCurrentScreen((current) =>
       current === screens.length - 1 ? 0 : current + 1
     );
   };
 
+  const selectScreen = (index: number) => {
+    if (index === currentScreen) return;
+
+    setDirection(index > currentScreen ? "left" : "right");
+    setCurrentScreen(index);
+  };
+
   return (
     <div className={styles.showcase}>
       <div className={styles.phone}>
-        <Image
-          src={screens[currentScreen].src}
-          alt={screens[currentScreen].alt}
-          fill
-          sizes="(max-width: 700px) 230px, 300px"
-          className={styles.screenshot}
-        />
+        <div
+          key={currentScreen}
+          className={`${styles.slide} ${
+            direction === "left" ? styles.slideFromRight : styles.slideFromLeft
+          }`}
+        >
+          <Image
+            src={screens[currentScreen].src}
+            alt={screens[currentScreen].alt}
+            fill
+            sizes="(max-width: 700px) 230px, 300px"
+            className={styles.screenshot}
+          />
+        </div>
       </div>
 
       <div className={styles.controls}>
@@ -67,7 +96,7 @@ export default function ExpenseFlowShowcase() {
               <button
                 key={screen.src}
                 type="button"
-                onClick={() => setCurrentScreen(index)}
+                onClick={() => selectScreen(index)}
                 aria-label={`Show ${screen.label}`}
                 aria-current={currentScreen === index ? "true" : undefined}
                 className={
