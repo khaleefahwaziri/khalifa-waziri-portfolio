@@ -229,56 +229,6 @@
   border-radius: 999px;
 }
 
-/* Expense Flow */
-
-.productVisual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  min-height: 520px;
-  padding: 2.5rem 2rem;
-  background: #e9ebe6;
-}
-
-.appScreen {
-  position: relative;
-  flex-shrink: 0;
-  overflow: hidden;
-  background: #111;
-  border: 5px solid #1d1d1b;
-  border-radius: 28px;
-  box-shadow: 0 18px 45px rgba(23, 23, 21, 0.14);
-}
-
-.mainScreen {
-  z-index: 3;
-  width: 190px;
-  height: 410px;
-}
-
-.leftScreen,
-.rightScreen {
-  z-index: 1;
-  width: 165px;
-  height: 355px;
-  opacity: 1;
-}
-
-.leftScreen {
-  margin-right: -25px;
-  transform: rotate(-3deg) translateY(12px);
-}
-
-.rightScreen {
-  margin-left: -25px;
-  transform: rotate(3deg) translateY(12px);
-}
-
-.appScreenshot {
-  object-fit: cover;
-  object-position: center;
-}
 
 /* Ride Sharing */
 
@@ -340,7 +290,7 @@
 
 .browserSecondaryRow {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
@@ -475,33 +425,5 @@
   aspect-ratio: 16 / 9;
 }
 
-  /* Expense Flow mobile */
-
-.productVisual {
-  gap: 0;
-  min-height: 360px;
-  padding: 1.5rem 0.75rem;
-}
-
-.mainScreen {
-  width: 145px;
-  height: 315px;
-}
-
-.leftScreen,
-.rightScreen {
-  width: 115px;
-  height: 260px;
-}
-
-.leftScreen {
-  margin-right: -18px;
-  transform: rotate(-2deg) translateY(8px);
-}
-
-.rightScreen {
-  margin-left: -18px;
-  transform: rotate(2deg) translateY(8px);
-}
 
 }

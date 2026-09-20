@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./SelectedWork.module.css";
+import ExpenseFlowShowcase from "./ExpenseFlowShowcase";
 
 export default function SelectedWork() {
   return (
@@ -138,38 +139,8 @@ export default function SelectedWork() {
             </div>
           </div>
 
-             <div className={`${styles.visual} ${styles.productVisual}`}>
-                <div className={`${styles.appScreen} ${styles.leftScreen}`}>
-                <Image
-                src="/images/expense-flow/expense-add.png"
-                alt="Expense Flow screen for adding a new expense"
-                fill
-                sizes="(max-width: 700px) 150px, 190px"
-                className={styles.appScreenshot}
-                />
-            </div>
-
-            <div className={`${styles.appScreen} ${styles.mainScreen}`}>
-                <Image
-                src="/images/expense-flow/expense-home.png"
-                alt="Expense Flow main application screen"
-                fill
-                sizes="(max-width: 700px) 170px, 215px"
-                className={styles.appScreenshot}
-                priority
-                />
-            </div>
-
-            <div className={`${styles.appScreen} ${styles.rightScreen}`}>
-                <Image
-                src="/images/expense-flow/expense-breakdown.png"
-                alt="Expense Flow spending breakdown screen"
-                fill
-                sizes="(max-width: 700px) 150px, 190px"
-                className={styles.appScreenshot}
-                />
-            </div>
-            </div>
+             <ExpenseFlowShowcase />
+             
         </article>
 
         <article className={styles.project}>
