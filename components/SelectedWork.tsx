@@ -29,8 +29,8 @@ export default function SelectedWork() {
               <h2 className={styles.projectTitle}>Expense Flow</h2>
 
               <p className={styles.projectDescription}>
-                My first independent SwiftUI project, built as a personal
-                expense-tracking application using Swift, SwiftUI and Xcode.
+                I build a SwiftUI project, built as a personal
+                expense tracking application using Swift, SwiftUI and Xcode.
               </p>
 
               <div className={styles.metaGrid}>
