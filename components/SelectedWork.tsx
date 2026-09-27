@@ -1,6 +1,6 @@
-import Image from "next/image";
 import styles from "./SelectedWork.module.css";
 import ExpenseFlowShowcase from "./ExpenseFlowShowcase";
+import RideSharingShowcase from "./RideSharingShowcase";
 
 export default function SelectedWork() {
   return (
@@ -15,9 +15,85 @@ export default function SelectedWork() {
           </p>
         </div>
 
-        <article className={styles.project}>
+
+         {/* Expense Flow */}
+        <article className={`${styles.project} ${styles.reverse}`}>
           <div className={styles.projectInformation}>
             <div className={styles.projectNumber}>01</div>
+
+            <div>
+              <p className={styles.projectType}>
+                Independent Project · iOS Development
+              </p>
+
+              <h2 className={styles.projectTitle}>Expense Flow</h2>
+
+              <p className={styles.projectDescription}>
+                My first independent SwiftUI project, built as a personal
+                expense-tracking application using Swift, SwiftUI and Xcode.
+              </p>
+
+              <div className={styles.metaGrid}>
+                <div>
+                  <span>Role</span>
+                  <p>iOS Developer</p>
+                </div>
+
+                <div>
+                  <span>Technology</span>
+                  <p>Swift, SwiftUI, Xcode</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ExpenseFlowShowcase />
+        </article>
+
+        {/* Ride-Sharing Platform */}
+        <article className={styles.project}>
+          <div className={styles.projectInformation}>
+            <div className={styles.projectNumber}>02</div>
+
+            <div>
+              <p className={styles.projectType}>
+                Group Project · Web Development
+              </p>
+
+              <h2 className={styles.projectTitle}>Ride-Sharing Platform</h2>
+
+              <p className={styles.projectDescription}>
+                A university group project where I contributed to core driver
+                and ride-management functionality across the application.
+              </p>
+
+              <div className={styles.metaGrid}>
+                <div>
+                  <span>My contribution</span>
+                  <p>
+                    Ride posting, confirmation, cancellation, driver dashboard
+                    and ride listings
+                  </p>
+                </div>
+
+                <div>
+                  <span>Technology</span>
+                  <p>
+                    Prisma, Fastify, Vuetify, MySQL, Swagger, Azure DevOps,
+                    GitHub
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <RideSharingShowcase />
+        </article>
+
+        {/* Dissertation */}
+        <article className={styles.project}>
+          <div className={styles.projectInformation}>
+            <div className={styles.projectNumber}>03</div>
 
             <div>
               <p className={styles.projectType}>
@@ -51,7 +127,9 @@ export default function SelectedWork() {
           <div className={`${styles.visual} ${styles.researchVisual}`}>
             <div className={styles.researchTop}>
               <div>
-                <span className={styles.researchLabel}>Research pipeline</span>
+                <span className={styles.researchLabel}>
+                  Research pipeline
+                </span>
 
                 <div className={styles.researchPipeline}>
                   <span>Bias in Bios</span>
@@ -71,8 +149,8 @@ export default function SelectedWork() {
               <span className={styles.findingLabel}>Key finding</span>
 
               <p>
-                Bias can persist through seemingly neutral proxy terms even when explicit
-                gender indicators are removed.
+                Bias can persist through seemingly neutral proxy terms even
+                when explicit gender indicators are removed.
               </p>
             </div>
 
@@ -89,7 +167,9 @@ export default function SelectedWork() {
 
               <div>
                 <strong>94.4%</strong>
-                <span>Top SHAP features identified as neutral proxy terms</span>
+                <span>
+                  Top SHAP features identified as neutral proxy terms
+                </span>
               </div>
 
               <div>
@@ -109,122 +189,9 @@ export default function SelectedWork() {
           </div>
         </article>
 
-        <article className={`${styles.project} ${styles.reverse}`}>
-          <div className={styles.projectInformation}>
-            <div className={styles.projectNumber}>02</div>
+       
 
-            <div>
-              <p className={styles.projectType}>
-                Independent Project · iOS Development
-              </p>
-
-              <h2 className={styles.projectTitle}>Expense Flow</h2>
-
-              <p className={styles.projectDescription}>
-                My first independent SwiftUI project, built as a personal
-                expense-tracking application using Swift, SwiftUI and Xcode.
-              </p>
-
-              <div className={styles.metaGrid}>
-                <div>
-                  <span>Role</span>
-                  <p>iOS Developer</p>
-                </div>
-
-                <div>
-                  <span>Technology</span>
-                  <p>Swift, SwiftUI, Xcode</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-             <ExpenseFlowShowcase />
-             
-        </article>
-
-        <article className={styles.project}>
-          <div className={styles.projectInformation}>
-            <div className={styles.projectNumber}>03</div>
-
-            <div>
-              <p className={styles.projectType}>
-                University Group Project · Web Development
-              </p>
-
-              <h2 className={styles.projectTitle}>Ride-Sharing Platform</h2>
-
-              <p className={styles.projectDescription}>
-                A university group project where I contributed to core driver
-                and ride-management functionality across the application.
-              </p>
-
-              <div className={styles.metaGrid}>
-                <div>
-                  <span>My contribution</span>
-                  <p>
-                    Ride posting, confirmation, cancellation, driver dashboard
-                    and ride listings
-                  </p>
-                </div>
-
-                <div>
-                  <span>Technology</span>
-                  <p>
-                    Prisma, Fastify, Vuetify, MySQL, Swagger, Azure DevOps,
-                    GitHub
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={`${styles.visual} ${styles.browserVisual}`}>
-  <div className={styles.browserBar}>
-    <div className={styles.browserDots}>
-      <span />
-      <span />
-      <span />
-    </div>
-
-    <span className={styles.browserLabel}>Ride-Sharing Platform</span>
-  </div>
-
-  <div className={styles.browserShowcase}>
-    <div className={`${styles.browserScreen} ${styles.browserScreenMain}`}>
-      <Image
-        src="/images/ride-sharing/ride-dashboard.png"
-        alt="Ride-Sharing driver dashboard"
-        fill
-        sizes="(max-width: 700px) 90vw, 640px"
-        className={styles.browserScreenshot}
-      />
-    </div>
-
-    <div className={styles.browserSecondaryRow}>
-      <div className={styles.browserScreen}>
-        <Image
-          src="/images/ride-sharing/ride-post.png"
-          alt="Ride-Sharing ride posting screen"
-          fill
-          sizes="(max-width: 700px) 44vw, 300px"
-          className={styles.browserScreenshot}
-        />
-      </div>
-
-      <div className={styles.browserScreen}>
-           <Image
-               src="/images/ride-sharing/ride-listings.png"
-               alt="Ride-Sharing ride listings screen"
-               fill
-               sizes="(max-width: 700px) 44vw, 300px"
-               className={styles.browserScreenshot}
-                />
-            </div>
-         </div>
-       </div>
-      </div>
-        </article>
+        
       </div>
     </section>
   );

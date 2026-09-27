@@ -33,7 +33,7 @@ export default function About() {
             <div className="aboutDetails">
               <div>
                 <span>Education</span>
-                <p>BSc & MSc Computer Science</p>
+                <p>BSc & MSc both in Computer Science</p>
                 <p>Coventry University</p>
               </div>
 
