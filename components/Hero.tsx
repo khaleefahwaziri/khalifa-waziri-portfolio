@@ -3,13 +3,16 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <section
+      className={styles.hero}
+      aria-labelledby="hero-heading"
+    >
       <div className="pageContainer">
         <div className={styles.heroInner}>
           <div className={styles.intro}>
             <p className={styles.eyebrow}>Computer Science Graduate</p>
 
-            <h1 className={styles.title}>
+            <h1 id="hero-heading" className={styles.title}>
               Khalifa Waziri
               <span>Software, AI and iOS.</span>
             </h1>
@@ -29,18 +32,18 @@ export default function Hero() {
                 className={styles.textLink}
                 href="https://github.com/khaleefahwaziri"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
-                GitHub ↗
+                GitHub <span aria-hidden="true">↗</span>
               </a>
 
               <a
                 className={styles.textLink}
                 href="https://www.linkedin.com/in/khaleefah-waziri-369677235/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
-                LinkedIn ↗
+                LinkedIn <span aria-hidden="true">↗</span>
               </a>
 
               <Link className={styles.textLink} href="#contact">

@@ -4,33 +4,46 @@ import RideSharingShowcase from "./RideSharingShowcase";
 
 export default function SelectedWork() {
   return (
-    <section className={styles.work} id="work">
+    <section
+      className={styles.work}
+      id="work"
+      aria-labelledby="selected-work-heading"
+    >
       <div className="pageContainer">
         <div className={styles.sectionHeader}>
           <p className="sectionLabel">01 / Selected Work</p>
 
-          <p className={styles.sectionIntro}>
+          <p id="selected-work-heading" className={styles.sectionIntro}>
             A selection of academic and software projects across artificial
             intelligence, iOS development and full-stack web development.
           </p>
         </div>
 
-
-         {/* Expense Flow */}
-        <article className={`${styles.project} ${styles.reverse}`}>
+        {/* Expense Flow */}
+        <article
+          className={`${styles.project} ${styles.reverse}`}
+          aria-labelledby="expense-flow-heading"
+        >
           <div className={styles.projectInformation}>
-            <div className={styles.projectNumber}>01</div>
+            <div className={styles.projectNumber} aria-hidden="true">
+              01
+            </div>
 
             <div>
               <p className={styles.projectType}>
                 Independent Project · iOS Development
               </p>
 
-              <h2 className={styles.projectTitle}>Expense Flow</h2>
+              <h2
+                id="expense-flow-heading"
+                className={styles.projectTitle}
+              >
+                Expense Flow
+              </h2>
 
               <p className={styles.projectDescription}>
-                I build a SwiftUI project, built as a personal
-                expense tracking application using Swift, SwiftUI and Xcode.
+                A SwiftUI project built as a personal expense-tracking
+                application using Swift, SwiftUI and Xcode.
               </p>
 
               <div className={styles.metaGrid}>
@@ -51,16 +64,26 @@ export default function SelectedWork() {
         </article>
 
         {/* Ride-Sharing Platform */}
-        <article className={styles.project}>
+        <article
+          className={styles.project}
+          aria-labelledby="ride-sharing-heading"
+        >
           <div className={styles.projectInformation}>
-            <div className={styles.projectNumber}>02</div>
+            <div className={styles.projectNumber} aria-hidden="true">
+              02
+            </div>
 
             <div>
               <p className={styles.projectType}>
                 Group Project · Web Development
               </p>
 
-              <h2 className={styles.projectTitle}>Ride-Sharing Platform</h2>
+              <h2
+                id="ride-sharing-heading"
+                className={styles.projectTitle}
+              >
+                Ride-Sharing Platform
+              </h2>
 
               <p className={styles.projectDescription}>
                 A university group project where I contributed to core driver
@@ -91,16 +114,24 @@ export default function SelectedWork() {
         </article>
 
         {/* Dissertation */}
-        <article className={styles.project}>
+        <article
+          className={styles.project}
+          aria-labelledby="dissertation-heading"
+        >
           <div className={styles.projectInformation}>
-            <div className={styles.projectNumber}>03</div>
+            <div className={styles.projectNumber} aria-hidden="true">
+              03
+            </div>
 
             <div>
               <p className={styles.projectType}>
                 MSc Dissertation · Artificial Intelligence
               </p>
 
-              <h2 className={styles.projectTitle}>
+              <h2
+                id="dissertation-heading"
+                className={styles.projectTitle}
+              >
                 Detecting Hidden Bias in Automated CV Screening Systems
               </h2>
 
@@ -124,7 +155,10 @@ export default function SelectedWork() {
             </div>
           </div>
 
-          <div className={`${styles.visual} ${styles.researchVisual}`}>
+          <div
+            className={`${styles.visual} ${styles.researchVisual}`}
+            aria-label="Dissertation research summary"
+          >
             <div className={styles.researchTop}>
               <div>
                 <span className={styles.researchLabel}>
@@ -133,11 +167,17 @@ export default function SelectedWork() {
 
                 <div className={styles.researchPipeline}>
                   <span>Bias in Bios</span>
-                  <span className={styles.arrow}>→</span>
+                  <span className={styles.arrow} aria-hidden="true">
+                    →
+                  </span>
                   <span>ML Models</span>
-                  <span className={styles.arrow}>→</span>
+                  <span className={styles.arrow} aria-hidden="true">
+                    →
+                  </span>
                   <span>SHAP + LIME</span>
-                  <span className={styles.arrow}>→</span>
+                  <span className={styles.arrow} aria-hidden="true">
+                    →
+                  </span>
                   <span>Fairness Analysis</span>
                 </div>
               </div>
@@ -188,10 +228,6 @@ export default function SelectedWork() {
             </div>
           </div>
         </article>
-
-       
-
-        
       </div>
     </section>
   );

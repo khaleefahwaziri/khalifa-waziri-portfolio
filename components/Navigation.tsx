@@ -20,14 +20,25 @@ export default function Navigation() {
 
   return (
     <header className={styles.header}>
-      <nav className={styles.navigation} aria-label="Main navigation">
-        <Link href="/" className={styles.logo} onClick={closeMenu}>
+      <nav
+        className={styles.navigation}
+        aria-label="Main navigation"
+      >
+        <Link
+          href="/"
+          className={styles.logo}
+          onClick={closeMenu}
+          aria-label="Khalifa Waziri — home"
+        >
           Khalifa Waziri
         </Link>
 
         <button
           className={styles.menuButton}
           type="button"
+          aria-label={
+            menuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
           onClick={() => setMenuOpen((current) => !current)}
@@ -44,9 +55,16 @@ export default function Navigation() {
         </div>
 
         {menuOpen && (
-          <div className={styles.mobileMenu} id="mobile-navigation">
+          <div
+            className={styles.mobileMenu}
+            id="mobile-navigation"
+          >
             {navigationItems.map((item) => (
-              <Link key={item.href} href={item.href} onClick={closeMenu}>
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+              >
                 {item.label}
               </Link>
             ))}

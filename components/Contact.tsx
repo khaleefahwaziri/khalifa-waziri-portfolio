@@ -1,12 +1,16 @@
 export default function Contact() {
   return (
-    <section id="contact" className="section contactSection">
+    <section
+      id="contact"
+      className="section contactSection"
+      aria-labelledby="contact-heading"
+    >
       <div className="pageContainer">
         <div className="contactLayout">
           <span className="sectionLabel">Contact</span>
 
           <div className="contactMain">
-            <h2>Let&apos;s build something useful.</h2>
+            <h2 id="contact-heading">Let&apos;s build something useful.</h2>
 
             <p>
               I&apos;m open to graduate and early-career opportunities in
@@ -24,29 +28,31 @@ export default function Contact() {
             </a>
           </div>
 
-          <div className="contactFooter">
+          <footer className="contactFooter">
             <span>© Khalifa Waziri</span>
 
             <div className="contactLinks">
               <a
                 href="https://github.com/khaleefahwaziri"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
-                GitHub ↗
+                GitHub <span aria-hidden="true">↗</span>
               </a>
 
               <a
                 href="https://www.linkedin.com/in/khaleefah-waziri-369677235/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
-                LinkedIn ↗
+                LinkedIn <span aria-hidden="true">↗</span>
               </a>
 
-              <a href="#top">Back to top ↑</a>
+              <a href="#top">
+                Back to top <span aria-hidden="true">↑</span>
+              </a>
             </div>
-          </div>
+          </footer>
         </div>
       </div>
     </section>
