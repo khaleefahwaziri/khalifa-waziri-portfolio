@@ -88,12 +88,16 @@ export default function ExpenseFlowShowcase() {
     <div
       ref={showcaseRef}
       className={`${styles.showcase} ${showHint ? styles.showHint : ""}`}
+      role="region"
+      aria-label="Expense Flow application screenshots"
     >
       <div className={styles.phone}>
         <div
           key={currentScreen}
           className={`${styles.slide} ${
-            direction === "left" ? styles.slideFromRight : styles.slideFromLeft
+            direction === "left"
+              ? styles.slideFromRight
+              : styles.slideFromLeft
           }`}
         >
           <Image
@@ -114,19 +118,27 @@ export default function ExpenseFlowShowcase() {
           aria-label="Previous Expense Flow screen"
           className={styles.arrow}
         >
-          ←
+          <span aria-hidden="true">←</span>
         </button>
 
         <div className={styles.screenInformation}>
-          <span>{screens[currentScreen].label}</span>
+          <span aria-live="polite" aria-atomic="true">
+            {screens[currentScreen].label} — screen {currentScreen + 1} of{" "}
+            {screens.length}
+          </span>
 
-          <div className={styles.dots}>
+          <div
+            className={styles.dots}
+            aria-label="Choose Expense Flow screen"
+          >
             {screens.map((screen, index) => (
               <button
                 key={screen.src}
                 type="button"
                 onClick={() => selectScreen(index)}
-                aria-label={`Show ${screen.label}`}
+                aria-label={`Show ${screen.label}, screen ${index + 1} of ${
+                  screens.length
+                }`}
                 aria-current={currentScreen === index ? "true" : undefined}
                 className={
                   currentScreen === index
@@ -144,7 +156,7 @@ export default function ExpenseFlowShowcase() {
           aria-label="Next Expense Flow screen"
           className={styles.arrow}
         >
-          →
+          <span aria-hidden="true">→</span>
         </button>
       </div>
     </div>

@@ -88,6 +88,8 @@ export default function RideSharingShowcase() {
     <div
       ref={showcaseRef}
       className={`${styles.showcase} ${showHint ? styles.showHint : ""}`}
+      role="region"
+      aria-label="Ride-Sharing Platform screenshots"
     >
       <div className={styles.browser}>
         <div className={styles.browserBar}>
@@ -127,19 +129,27 @@ export default function RideSharingShowcase() {
           aria-label="Previous Ride-Sharing screen"
           className={styles.arrow}
         >
-          ←
+          <span aria-hidden="true">←</span>
         </button>
 
         <div className={styles.screenInformation}>
-          <span>{screens[currentScreen].label}</span>
+          <span aria-live="polite" aria-atomic="true">
+            {screens[currentScreen].label} — screen {currentScreen + 1} of{" "}
+            {screens.length}
+          </span>
 
-          <div className={styles.dots}>
+          <div
+            className={styles.dots}
+            aria-label="Choose Ride-Sharing screen"
+          >
             {screens.map((screen, index) => (
               <button
                 key={screen.src}
                 type="button"
                 onClick={() => selectScreen(index)}
-                aria-label={`Show ${screen.label}`}
+                aria-label={`Show ${screen.label}, screen ${index + 1} of ${
+                  screens.length
+                }`}
                 aria-current={currentScreen === index ? "true" : undefined}
                 className={
                   currentScreen === index
@@ -157,7 +167,7 @@ export default function RideSharingShowcase() {
           aria-label="Next Ride-Sharing screen"
           className={styles.arrow}
         >
-          →
+          <span aria-hidden="true">→</span>
         </button>
       </div>
     </div>
