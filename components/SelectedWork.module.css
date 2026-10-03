@@ -34,8 +34,8 @@
 
 .projectInformation {
   display: grid;
-  grid-template-columns: 42px minmax(0, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 1rem;
 }
 
 .projectNumber {
@@ -56,19 +56,19 @@
 }
 
 .projectTitle {
-  max-width: 620px;
-  font-size: clamp(2.2rem, 4.5vw, 4.5rem);
+  max-width: 520px;
+  font-size: clamp(2.1rem, 3.2vw, 3.6rem);
   font-weight: 500;
-  line-height: 0.98;
+  line-height: 1;
   letter-spacing: -0.045em;
 }
 
 .projectDescription {
-  max-width: 600px;
-  margin-top: 1.75rem;
+  max-width: 430px;
+  margin-top: 1.5rem;
   color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 .metaGrid {
@@ -235,9 +235,13 @@
 
 @media (max-width: 950px) {
   .project {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
+  display: grid;
+  grid-template-columns: minmax(280px, 0.65fr) minmax(0, 1.35fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+}
 
   .reverse > :first-child,
   .reverse > :last-child {
@@ -246,6 +250,106 @@
 
   .visual {
     min-height: 480px;
+  }
+}
+
+
+/* Expense Flow — wide showcase layout */
+
+.expenseProject {
+  position: relative;
+  grid-template-columns: minmax(260px, 0.55fr) minmax(650px, 1.45fr);
+  gap: 1rem;
+  min-height: 650px;
+  margin: 2rem 0;
+  padding: 3.5rem 3rem;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 70% 45%,
+      rgba(238, 218, 235, 0.72),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(244, 225, 219, 0.65),
+      transparent 34%
+    ),
+    #f7f4f7;
+  border: 1px solid rgba(23, 23, 21, 0.07);
+  border-radius: 28px;
+}
+
+.expenseProject::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 55%;
+  height: 80%;
+  background: rgba(229, 220, 244, 0.25);
+  filter: blur(70px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.expenseProject > * {
+  position: relative;
+  z-index: 1;
+}
+
+.expenseProject .projectInformation {
+  align-self: center;
+}
+
+.expenseProject .projectTitle {
+  font-size: clamp(2.5rem, 3.5vw, 4rem);
+}
+
+.expenseProject .projectDescription {
+  max-width: 360px;
+}
+
+.expenseProject .metaGrid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 340px;
+}
+
+@media (max-width: 1100px) {
+  .expenseProject {
+    grid-template-columns: minmax(240px, 0.7fr) minmax(500px, 1.3fr);
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .expenseProject {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 2rem;
+    padding: 3rem 2rem;
+  }
+
+  .expenseProject .projectDescription {
+    max-width: 600px;
+  }
+
+  .expenseProject .metaGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .expenseProject {
+    margin: 1rem 0;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+  }
+
+  .expenseProject .metaGrid {
+    grid-template-columns: 1fr;
   }
 }
 

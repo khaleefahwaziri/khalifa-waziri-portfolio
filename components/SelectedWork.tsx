@@ -21,9 +21,9 @@ export default function SelectedWork() {
 
         {/* Expense Flow */}
         <article
-          className={`${styles.project} ${styles.reverse}`}
-          aria-labelledby="expense-flow-heading"
-        >
+           className={`${styles.project} ${styles.expenseProject}`}
+           aria-labelledby="expense-flow-heading"
+          >
           <div className={styles.projectInformation}>
             <div className={styles.projectNumber} aria-hidden="true">
               01
