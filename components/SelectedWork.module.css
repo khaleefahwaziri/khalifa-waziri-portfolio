@@ -117,6 +117,132 @@
   }
 }
 
+/* Expense Flow — wide showcase layout */
+
+.expenseProject {
+  position: relative;
+  grid-template-columns: minmax(260px, 0.55fr) minmax(650px, 1.45fr);
+  gap: 1rem;
+  min-height: 650px;
+  margin: 2rem 0;
+  padding: 3.5rem 3rem;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 70% 45%,
+      rgba(238, 218, 235, 0.72),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(244, 225, 219, 0.65),
+      transparent 34%
+    ),
+    #f7f4f7;
+  border: 1px solid rgba(23, 23, 21, 0.07);
+  border-radius: 28px;
+}
+
+.expenseProject::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 55%;
+  height: 80%;
+  background: rgba(229, 220, 244, 0.25);
+  filter: blur(70px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.expenseProject > * {
+  position: relative;
+  z-index: 1;
+}
+
+.expenseProject .projectInformation {
+  align-self: center;
+}
+
+.expenseProject .projectTitle {
+  font-size: clamp(2.5rem, 3.5vw, 4rem);
+}
+
+.expenseProject .projectDescription {
+  max-width: 360px;
+}
+
+.expenseProject .metaGrid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 340px;
+}
+
+/* Ride-Sharing — browser showcase layout */
+
+.rideProject {
+  position: relative;
+  grid-template-columns: minmax(260px, 0.55fr) minmax(650px, 1.45fr);
+  gap: 1rem;
+  min-height: 650px;
+  margin: 3rem 0;
+  padding: 3.5rem 3rem;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 72% 44%,
+      rgba(218, 224, 242, 0.68),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 92% 28%,
+      rgba(232, 221, 241, 0.62),
+      transparent 34%
+    ),
+    #f4f5f8;
+
+  border: 1px solid rgba(23, 23, 21, 0.07);
+  border-radius: 28px;
+}
+
+.rideProject::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  right: 4%;
+  width: 58%;
+  height: 84%;
+  background: rgba(218, 224, 244, 0.3);
+  filter: blur(75px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.rideProject > * {
+  position: relative;
+  z-index: 1;
+}
+
+.rideProject .projectInformation {
+  align-self: center;
+}
+
+.rideProject .projectTitle {
+  font-size: clamp(2.5rem, 3.5vw, 4rem);
+}
+
+.rideProject .projectDescription {
+  max-width: 360px;
+}
+
+.rideProject .metaGrid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 340px;
+}
+
 /* Dissertation */
 
 .researchVisual {
@@ -231,17 +357,24 @@
   border-radius: 999px;
 }
 
+/* Responsive project cards */
+
+@media (max-width: 1100px) {
+  .expenseProject,
+  .rideProject {
+    grid-template-columns: minmax(240px, 0.7fr) minmax(500px, 1.3fr);
+    padding: 3rem 2rem;
+  }
+}
+
 /* Tablet */
 
 @media (max-width: 950px) {
   .project {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.65fr) minmax(0, 1.35fr);
-  gap: 2.5rem;
-  align-items: center;
-  padding: 6rem 0;
-  border-top: 1px solid var(--border);
-}
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 6rem 0;
+  }
 
   .reverse > :first-child,
   .reverse > :last-child {
@@ -251,105 +384,24 @@
   .visual {
     min-height: 480px;
   }
-}
 
-
-/* Expense Flow — wide showcase layout */
-
-.expenseProject {
-  position: relative;
-  grid-template-columns: minmax(260px, 0.55fr) minmax(650px, 1.45fr);
-  gap: 1rem;
-  min-height: 650px;
-  margin: 2rem 0;
-  padding: 3.5rem 3rem;
-  overflow: hidden;
-  background:
-    radial-gradient(
-      circle at 70% 45%,
-      rgba(238, 218, 235, 0.72),
-      transparent 38%
-    ),
-    radial-gradient(
-      circle at 90% 30%,
-      rgba(244, 225, 219, 0.65),
-      transparent 34%
-    ),
-    #f7f4f7;
-  border: 1px solid rgba(23, 23, 21, 0.07);
-  border-radius: 28px;
-}
-
-.expenseProject::after {
-  content: "";
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  width: 55%;
-  height: 80%;
-  background: rgba(229, 220, 244, 0.25);
-  filter: blur(70px);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.expenseProject > * {
-  position: relative;
-  z-index: 1;
-}
-
-.expenseProject .projectInformation {
-  align-self: center;
-}
-
-.expenseProject .projectTitle {
-  font-size: clamp(2.5rem, 3.5vw, 4rem);
-}
-
-.expenseProject .projectDescription {
-  max-width: 360px;
-}
-
-.expenseProject .metaGrid {
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  max-width: 340px;
-}
-
-@media (max-width: 1100px) {
-  .expenseProject {
-    grid-template-columns: minmax(240px, 0.7fr) minmax(500px, 1.3fr);
-    padding: 3rem 2rem;
-  }
-}
-
-@media (max-width: 950px) {
-  .expenseProject {
+  .expenseProject,
+  .rideProject {
     grid-template-columns: 1fr;
     min-height: auto;
     gap: 2rem;
     padding: 3rem 2rem;
   }
 
-  .expenseProject .projectDescription {
+  .expenseProject .projectDescription,
+  .rideProject .projectDescription {
     max-width: 600px;
   }
 
-  .expenseProject .metaGrid {
+  .expenseProject .metaGrid,
+  .rideProject .metaGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: none;
-  }
-}
-
-@media (max-width: 700px) {
-  .expenseProject {
-    margin: 1rem 0;
-    padding: 2rem 1rem;
-    border-radius: 20px;
-  }
-
-  .expenseProject .metaGrid {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -387,6 +439,18 @@
 
   .visual {
     min-height: 400px;
+  }
+
+  .expenseProject,
+  .rideProject {
+    margin: 1rem 0;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+  }
+
+  .expenseProject .metaGrid,
+  .rideProject .metaGrid {
+    grid-template-columns: 1fr;
   }
 
   /* Dissertation mobile */

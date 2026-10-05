@@ -1,5 +1,5 @@
 :root {
-  --background: #f7f7f4;
+  --background: #f8f7f6;
   --foreground: #171715;
   --muted: #686862;
   --border: #dcdcd5;
@@ -23,7 +23,27 @@ html {
 body {
   min-height: 100vh;
   color: var(--foreground);
-  background: var(--background);
+
+  background:
+    radial-gradient(
+      circle at 15% 18%,
+      rgba(238, 226, 235, 0.28),
+      transparent 27rem
+    ),
+    radial-gradient(
+      circle at 88% 38%,
+      rgba(225, 228, 242, 0.26),
+      transparent 30rem
+    ),
+    radial-gradient(
+      circle at 35% 68%,
+      rgba(241, 229, 234, 0.2),
+      transparent 28rem
+    ),
+    var(--background);
+
+  background-attachment: fixed;
+
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -292,7 +312,26 @@ img {
   color: #f4f4ef;
 }
 
+/* Mobile */
+
 @media (max-width: 700px) {
+  body {
+    background:
+      radial-gradient(
+        circle at 15% 14%,
+        rgba(238, 226, 235, 0.24),
+        transparent 20rem
+      ),
+      radial-gradient(
+        circle at 90% 48%,
+        rgba(225, 228, 242, 0.22),
+        transparent 22rem
+      ),
+      var(--background);
+
+    background-attachment: scroll;
+  }
+
   .pageContainer {
     width: min(100% - 32px, var(--page-width));
   }
@@ -303,69 +342,68 @@ img {
 
   /* About mobile */
 
-.aboutLayout {
-  grid-template-columns: 1fr;
-  gap: 3rem;
-}
+  .aboutLayout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 
-.aboutHeading h2 {
-  font-size: 2.8rem;
-}
+  .aboutHeading h2 {
+    font-size: 2.8rem;
+  }
 
-.aboutContent .aboutLead {
-  font-size: 1.3rem;
-}
+  .aboutContent .aboutLead {
+    font-size: 1.3rem;
+  }
 
-.aboutDetails {
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem 1rem;
-  margin-top: 3rem;
-}
+  .aboutDetails {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+    margin-top: 3rem;
+  }
 
-/* Currently mobile */
+  /* Currently mobile */
 
-.currentlyLayout {
-  grid-template-columns: 1fr;
-  gap: 3rem;
-}
+  .currentlyLayout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 
-.currentlyLayout h2 {
-  font-size: 2.8rem;
-}
+  .currentlyLayout h2 {
+    font-size: 2.8rem;
+  }
 
-/* Contact mobile */
+  /* Contact mobile */
 
-.contactLayout {
-  min-height: 560px;
-}
+  .contactLayout {
+    min-height: 560px;
+  }
 
-.contactMain {
-  padding: 4rem 0;
-}
+  .contactMain {
+    padding: 4rem 0;
+  }
 
-.contactMain h2 {
-  font-size: clamp(3rem, 15vw, 4.5rem);
-}
+  .contactMain h2 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
 
-.contactMain > p {
-  font-size: 0.95rem;
-}
+  .contactMain > p {
+    font-size: 0.95rem;
+  }
 
-.contactEmail {
-  max-width: 100%;
-  font-size: 0.9rem;
-  overflow-wrap: anywhere;
-}
+  .contactEmail {
+    max-width: 100%;
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+  }
 
-.contactFooter {
-  align-items: flex-start;
-  flex-direction: column;
-}
+  .contactFooter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 
-.contactLinks {
-  gap: 1rem;
-}
-
+  .contactLinks {
+    gap: 1rem;
+  }
 }
 
 /* Reduced motion */

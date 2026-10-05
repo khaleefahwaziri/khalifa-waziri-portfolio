@@ -65,9 +65,9 @@ export default function SelectedWork() {
 
         {/* Ride-Sharing Platform */}
         <article
-          className={styles.project}
+          className={`${styles.project} ${styles.rideProject}`}
           aria-labelledby="ride-sharing-heading"
-        >
+        > 
           <div className={styles.projectInformation}>
             <div className={styles.projectNumber} aria-hidden="true">
               02
