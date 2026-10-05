@@ -11,11 +11,6 @@ const screens = [
     label: "Dashboard",
   },
   {
-    src: "/images/expense-flow/expense-add.png",
-    alt: "Expense Flow screen for adding a new expense",
-    label: "Add expense",
-  },
-  {
     src: "/images/expense-flow/expense-detail.png",
     alt: "Expense Flow expense detail screen",
     label: "Expense detail",
@@ -31,7 +26,6 @@ const screens = [
     label: "Delete expense",
   },
 ];
-
 /*
   Repeat the full set several times.
 
