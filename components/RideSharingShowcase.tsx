@@ -6,12 +6,6 @@ import styles from "./RideSharingShowcase.module.css";
 
 const screens = [
   {
-    src: "/images/ride-sharing/ride-dashboard.png",
-    alt: "Ride-Sharing driver dashboard",
-    label: "Driver dashboard",
-    imageClass: "dashboard",
-  },
-  {
     src: "/images/ride-sharing/ride-post.png",
     alt: "Ride-Sharing ride posting screen",
     label: "Post a ride",
@@ -217,11 +211,7 @@ export default function RideSharingShowcase() {
                         alt={isActive ? screen.alt : ""}
                         fill
                         sizes="(max-width: 700px) 82vw, 560px"
-                        className={`${styles.screenshot} ${
-                          screen.imageClass === "dashboard"
-                            ? styles.dashboardScreenshot
-                            : ""
-                        }`}
+                        className={styles.screenshot}
                       />
                     </div>
                   </div>
